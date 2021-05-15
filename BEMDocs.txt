@@ -1,0 +1,210 @@
+Tài Liệu BEM
+
+# CSS Coding guidline
+
+## Components
+
+###. Những components dùng chung.
+
+"Thiết kê các thành phần này để có thể tái sử dụng, và tồn tại một cách độc lập với các components khác.
+
+ví dụ như: Bootstrap là một ví dụ tốt về thiết kế như vậy."
+
+ví dụ :  `components/_button.scss`
+
+``` scss
+  .button {
+    …
+    &.-blue { … }
+  }
+```
+
+``` html
+  <a class="button" href="…"> … </a>
+  <button class="button -blue" type="button"> …　</button>
+```
+
+## Pages
+
+- Layer bao gồm các yếu tố trên 1 màn hình đối với URL
+ở đây thì có thể thêm các `components` 、nếu cần thiết thì có thể thêm các style đặc trưng、hoặc có thể override các style có sẵn。
+
+ví dụ: `pages/_home.scss`
+
+``` scss
+  .home {
+    ....
+    &__header {
+      position: relative;
+      ....
+      .video {
+        position: absolute;
+        top: 0;
+        left: 0;
+      ...
+      }
+    }
+  }
+```
+``` html
+  <main class="home">
+    <div class="home__header">
+      <video class="video" src="…"></video>
+      <h1>可能性は無限大</h1>
+      …
+    </div>
+    …
+  </main>
+```
+
+## Cách đặt tên files
+
+- Tên Selector của component hoặc pages thì đặt làm (name space)。
+
+ví dụ: 
+components/_button.scss  # `.button { … }`
+pages/_home.scss        # `.home { … }`
+
+## Cách đặt tên selector
+
+Áp dụng các quy tắc ở : MindBEMding và Chainable BEM modifiers
+
+``` scss
+  .component {
+    …
+    &.-modifier { … }
+    }
+    &__subcomponent {
+      …
+      &.-subcomponent-modifier {
+        … 
+      }
+    }
+  }
+
+``` html
+  <div class="component -modifier">
+    <div class="component__subcomponent -subcomponent-modifier"> … </div>
+  </div>
+```
+
+
+## 1 element thì chỉ kế thừa từ 1 component
+
+RULE:「1element 1component」。Ví dụ element html ở dưới đây đã sử dụng nhiều component class.
+
+``` html
+     <!-- NG -->
+    <button class="grid button -center"> … </button>
+```
+
+``` html
+<!-- OK -->
+    <div class="grid -center">
+      <button class="button"> … </button>
+    </div>
+```
+
+## xử lý Layout
+
+- Để tái sử dụng được nhiều nhất thì hãy chia các component và layout riêng biệt nhất có thể.
+
+``` scss
+// NG
+    .video {
+       position: absolute;
+    }
+```
+
+thay vì cách viết như trên thì hãy sử dụng Styling cho layer trên pages hoặc là、tạo ra các component  sử dụng chung được trên layout ấy thì rất tốt.
+
+``` scss
+  // OK
+  .home__header {
+    position: relative;
+    …
+
+    .video {
+    position: absolute;
+    …
+    }
+  }
+``
+
+ví dụ: `components/_media.scss` (Media )
+``` scss
+  .media {
+    display: flex;
+    align-items: flex-start;
+    &.-reversed {
+      .media__figure {
+        order: 1;
+        margin-right: 0;
+        margin-left: 1em;
+      }
+    }
+    &__figure {
+      margin-right: 1em;
+    }
+    &__body {
+      flex: 1;
+    }
+  }
+```
+
+
+``` html
+  <div class="media">
+    <img class="media__figure" src="…">
+      <div class="media__body"> … </div>
+    </div>
+    <div class="media -reversed">
+      <img class="media__figure" src="…">
+    <div class="media__body"> … </div>
+  </div>
+```
+
+- Các thành phần càng độc lập càng tốt ,cũng có trường hợp sử dụng sub-component để lưu thông tin của layout。
+
+``` scss
+  .list {
+    &.-inline {
+      .list__item {
+        display: inline-block;
+        margin-right: 20px;
+      }
+    }
+  }
+```
+
+
+##  Casting và chi tiết
+
+- Về cơ bản trong 1 layer thì cấm casting. Nhất định phải sử dụng quan hệ cha-con `Page -> Components`
+
+``` scss
+  // NG
+    .modal .button { … }
+
+  // OK
+   .home__header .video { … }
+ ```
+
+## No more `!important`
+
+- Về cơ bản cấm sử dụng `!important`, nếu để quá chi tiết như vậy  sẽ phức tạp và khó maintain sau này
+
+
+## Quy Tắc viết javascript
+
+-Khi sử dụng js thì nên thêm js-element 
+
+``` html
+  //NG
+  <a class="button reload" href="…"> … </a>
+  // OK
+  <a class="button js-reload" href="…"> … </a>
+```
+
+
+Để hiểu thêm về BEM mọi người có thể đọc ở link sau : https://viblo.asia/p/tim-hieu-ve-bem-trong-15-phut-924lJOk65PM
