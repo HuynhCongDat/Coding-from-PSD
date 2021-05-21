@@ -557,7 +557,6 @@ main .detail-product {
   width: 74%;
   height: auto;
   margin: 0 13%;
-  border: .1px solid red;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -566,7 +565,215 @@ main .detail-product {
 main .detail-product .detail-product__contents {
   width: 68%;
   height: auto;
-  border: .1px solid black;
+  margin: 1rem 0;
+}
+
+main .detail-product .detail-product__contents .__product-content {
+  width: 100%;
+  height: 510px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem 0rem;
+}
+
+main .detail-product .detail-product__contents .__product-content .product__image {
+  width: 55%;
+  border: .1px solid #b7b7b7;
+}
+
+main .detail-product .detail-product__contents .__product-content .product__image img {
+  width: 100%;
+  height: 100%;
+}
+
+main .detail-product .detail-product__contents .__product-content .product__action {
+  width: 45%;
+  padding: 1rem;
+}
+
+main .detail-product .detail-product__contents .__product-content .product__action .__rate {
+  font-size: 20px;
+  color: yellow;
+  margin-bottom: 1rem;
+}
+
+main .detail-product .detail-product__contents .__product-content .product__action .__title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+main .detail-product .detail-product__contents .__product-content .product__action .__code-product {
+  font-size: 15px;
+  margin-bottom: 1rem;
+}
+
+main .detail-product .detail-product__contents .__product-content .product__action .__price {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+main .detail-product .detail-product__contents .__product-content .product__action .__descshort {
+  border: .1px dashed #b7b7b7;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  text-align: justify;
+  padding: .5rem;
+}
+
+main .detail-product .detail-product__contents .__product-content .product__action .__btn-addCart button {
+  width: 160px;
+  height: 40px;
+  background-color: #55a007;
+  color: white;
+  border: none;
+  border-radius: 2px;
+}
+
+main .detail-product .detail-product__contents .__product-info {
+  height: auto;
+  width: 100%;
+  padding-bottom: 2rem;
+}
+
+main .detail-product .detail-product__contents .__product-info h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 25px 0;
+}
+
+main .detail-product .detail-product__contents .__product-info p, main .detail-product .detail-product__contents .__product-info li {
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 5px;
+}
+
+main .detail-product .detail-product__contents .__product-info li {
+  list-style: none;
+}
+
+main .detail-product .detail-product__contents .__product-info li:before {
+  content: "+";
+  margin-right: 4px;
+}
+
+main .detail-product .detail-product__contents .__product-info img {
+  margin: 15px 12%;
+  text-align: center;
+}
+
+main .detail-product .detail-product__contents .__product-comments {
+  width: 100%;
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main .detail-product .detail-product__contents .__product-comments .comment__action {
+  width: 100%;
+  height: 48%;
+}
+
+main .detail-product .detail-product__contents .__product-comments .comment__action .__item-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 2px;
+  height: 40%;
+}
+
+main .detail-product .detail-product__contents .__product-comments .comment__action .__item-1 button {
+  background-color: #4267b2;
+  color: white;
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin: 2px 3px 0 0;
+}
+
+main .detail-product .detail-product__contents .__product-comments .comment__action .__item-1 button i {
+  margin-right: 2px;
+}
+
+main .detail-product .detail-product__contents .__product-comments .comment__action .__item-1 input {
+  background-color: white;
+  color: red;
+  border-radius: 2px;
+  border: .1px solid #b7b7b7;
+  outline: none;
+  cursor: pointer;
+}
+
+main .detail-product .detail-product__contents .__product-comments .comment__action .__item-2 {
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+main .detail-product .detail-product__contents .__product-comments .comment__action .__item-2 p {
+  font-weight: bold;
+  margin-left: .5rem;
+}
+
+main .detail-product .detail-product__contents .__product-comments .comment__action .__item-2 .option__show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .detail-product .detail-product__contents .__product-comments .comment__detail {
+  width: 100%;
+  height: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem 0rem 1rem .5rem;
+}
+
+main .detail-product .detail-product__contents .__product-comments .comment__detail img {
+  height: 50px;
+  width: 7%;
+  margin-right: 3px;
+}
+
+main .detail-product .detail-product__contents .__product-comments .comment__detail form {
+  width: 93%;
+  height: 50px;
+}
+
+main .detail-product .detail-product__contents .__product-comments .comment__detail form input {
+  width: 100%;
+  height: 100%;
+}
+
+main .detail-product .detail-product__contents .__product-comments a {
+  color: #4267b2;
+  margin-left: .5rem;
+}
+
+main .detail-product .detail-product__contents .__product-comments a i {
+  margin-right: 4px;
+}
+
+main .detail-product .detail-product__contents .__product-comments hr {
+  border-top: .1px solid #b7b7b7;
+  width: 99%;
+  margin-left: .5rem;
 }
 
 main .detail-product .detail-product__side-bar {
@@ -593,7 +800,7 @@ main .detail-product .detail-product__side-bar .__news .__new-item {
   width: 335px;
   height: 30%;
   margin-bottom: 1rem;
-  border: .1px solid black;
+  border: .1px solid #b7b7b7;
 }
 
 main .detail-product .detail-product__side-bar .__news .__new-item img {
