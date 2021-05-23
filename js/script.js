@@ -1,3 +1,13 @@
+window.onload = function(){
+  $('#new-products__details').multislider({
+    interval: 4000,
+    slideAll: true,
+    duration: 1500
+  });
+  
+}
+
+
 var slideIndex = 0;
 showSlides();
 
